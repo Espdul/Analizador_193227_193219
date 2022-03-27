@@ -1,0 +1,1371 @@
+Created by PLY version 3.11 (http://www.dabeaz.com/ply)
+
+Grammar
+
+Rule 0     S' -> gt
+Rule 1     gt -> letra resto
+Rule 2     gt -> digito resto
+Rule 3     gt -> pg resto
+Rule 4     gt -> ex resto
+Rule 5     gt -> ps resto
+Rule 6     gt -> c resto
+Rule 7     resto -> letra resto
+Rule 8     resto -> digito resto
+Rule 9     resto -> simbolo resto
+Rule 10    resto -> pg resto
+Rule 11    resto -> ex resto
+Rule 12    resto -> ps resto
+Rule 13    resto -> c resto
+Rule 14    resto -> empty
+Rule 15    simbolo -> SIMBOLOS
+Rule 16    simbolo -> COMA
+Rule 17    pg -> ia pb ic
+Rule 18    ex -> ea pb ec
+Rule 19    ps -> pa pb pc
+Rule 20    c -> cs pb cs
+Rule 21    ia -> INTERROGACION_APERTURA
+Rule 22    ic -> INTERROGACION_CIERRE
+Rule 23    ea -> ADMIRACION_APERTURA
+Rule 24    ec -> ADMIRACION_CIERRE
+Rule 25    pa -> PARENTESIS_APERTURA
+Rule 26    pc -> PARENTESIS_CIERRE
+Rule 27    cs -> COMILLA_SIMPLE
+Rule 28    pb -> letra comp
+Rule 29    pb -> digito comp
+Rule 30    comp -> letra comp
+Rule 31    comp -> digito comp
+Rule 32    comp -> coma comp
+Rule 33    comp -> empty
+Rule 34    letra -> PALABRA
+Rule 35    digito -> NUMERO
+Rule 36    coma -> COMA
+Rule 37    empty -> <empty>
+
+Terminals, with rules where they appear
+
+ADMIRACION_APERTURA  : 23
+ADMIRACION_CIERRE    : 24
+COMA                 : 16 36
+COMILLA_SIMPLE       : 27
+INTERROGACION_APERTURA : 21
+INTERROGACION_CIERRE : 22
+NUMERO               : 35
+PALABRA              : 34
+PARENTESIS_APERTURA  : 25
+PARENTESIS_CIERRE    : 26
+SIMBOLOS             : 15
+error                : 
+
+Nonterminals, with rules where they appear
+
+c                    : 6 13
+coma                 : 32
+comp                 : 28 29 30 31 32
+cs                   : 20 20
+digito               : 2 8 29 31
+ea                   : 18
+ec                   : 18
+empty                : 14 33
+ex                   : 4 11
+gt                   : 0
+ia                   : 17
+ic                   : 17
+letra                : 1 7 28 30
+pa                   : 19
+pb                   : 17 18 19 20
+pc                   : 19
+pg                   : 3 10
+ps                   : 5 12
+resto                : 1 2 3 4 5 6 7 8 9 10 11 12 13
+simbolo              : 9
+
+Parsing method: LALR
+
+state 0
+
+    (0) S' -> . gt
+    (1) gt -> . letra resto
+    (2) gt -> . digito resto
+    (3) gt -> . pg resto
+    (4) gt -> . ex resto
+    (5) gt -> . ps resto
+    (6) gt -> . c resto
+    (34) letra -> . PALABRA
+    (35) digito -> . NUMERO
+    (17) pg -> . ia pb ic
+    (18) ex -> . ea pb ec
+    (19) ps -> . pa pb pc
+    (20) c -> . cs pb cs
+    (21) ia -> . INTERROGACION_APERTURA
+    (23) ea -> . ADMIRACION_APERTURA
+    (25) pa -> . PARENTESIS_APERTURA
+    (27) cs -> . COMILLA_SIMPLE
+
+    PALABRA         shift and go to state 8
+    NUMERO          shift and go to state 9
+    INTERROGACION_APERTURA shift and go to state 14
+    ADMIRACION_APERTURA shift and go to state 15
+    PARENTESIS_APERTURA shift and go to state 16
+    COMILLA_SIMPLE  shift and go to state 17
+
+    gt                             shift and go to state 1
+    letra                          shift and go to state 2
+    digito                         shift and go to state 3
+    pg                             shift and go to state 4
+    ex                             shift and go to state 5
+    ps                             shift and go to state 6
+    c                              shift and go to state 7
+    ia                             shift and go to state 10
+    ea                             shift and go to state 11
+    pa                             shift and go to state 12
+    cs                             shift and go to state 13
+
+state 1
+
+    (0) S' -> gt .
+
+
+
+state 2
+
+    (1) gt -> letra . resto
+    (7) resto -> . letra resto
+    (8) resto -> . digito resto
+    (9) resto -> . simbolo resto
+    (10) resto -> . pg resto
+    (11) resto -> . ex resto
+    (12) resto -> . ps resto
+    (13) resto -> . c resto
+    (14) resto -> . empty
+    (34) letra -> . PALABRA
+    (35) digito -> . NUMERO
+    (15) simbolo -> . SIMBOLOS
+    (16) simbolo -> . COMA
+    (17) pg -> . ia pb ic
+    (18) ex -> . ea pb ec
+    (19) ps -> . pa pb pc
+    (20) c -> . cs pb cs
+    (37) empty -> .
+    (21) ia -> . INTERROGACION_APERTURA
+    (23) ea -> . ADMIRACION_APERTURA
+    (25) pa -> . PARENTESIS_APERTURA
+    (27) cs -> . COMILLA_SIMPLE
+
+    PALABRA         shift and go to state 8
+    NUMERO          shift and go to state 9
+    SIMBOLOS        shift and go to state 27
+    COMA            shift and go to state 28
+    $end            reduce using rule 37 (empty -> .)
+    INTERROGACION_APERTURA shift and go to state 14
+    ADMIRACION_APERTURA shift and go to state 15
+    PARENTESIS_APERTURA shift and go to state 16
+    COMILLA_SIMPLE  shift and go to state 17
+
+    letra                          shift and go to state 18
+    resto                          shift and go to state 19
+    digito                         shift and go to state 20
+    simbolo                        shift and go to state 21
+    pg                             shift and go to state 22
+    ex                             shift and go to state 23
+    ps                             shift and go to state 24
+    c                              shift and go to state 25
+    empty                          shift and go to state 26
+    ia                             shift and go to state 10
+    ea                             shift and go to state 11
+    pa                             shift and go to state 12
+    cs                             shift and go to state 13
+
+state 3
+
+    (2) gt -> digito . resto
+    (7) resto -> . letra resto
+    (8) resto -> . digito resto
+    (9) resto -> . simbolo resto
+    (10) resto -> . pg resto
+    (11) resto -> . ex resto
+    (12) resto -> . ps resto
+    (13) resto -> . c resto
+    (14) resto -> . empty
+    (34) letra -> . PALABRA
+    (35) digito -> . NUMERO
+    (15) simbolo -> . SIMBOLOS
+    (16) simbolo -> . COMA
+    (17) pg -> . ia pb ic
+    (18) ex -> . ea pb ec
+    (19) ps -> . pa pb pc
+    (20) c -> . cs pb cs
+    (37) empty -> .
+    (21) ia -> . INTERROGACION_APERTURA
+    (23) ea -> . ADMIRACION_APERTURA
+    (25) pa -> . PARENTESIS_APERTURA
+    (27) cs -> . COMILLA_SIMPLE
+
+    PALABRA         shift and go to state 8
+    NUMERO          shift and go to state 9
+    SIMBOLOS        shift and go to state 27
+    COMA            shift and go to state 28
+    $end            reduce using rule 37 (empty -> .)
+    INTERROGACION_APERTURA shift and go to state 14
+    ADMIRACION_APERTURA shift and go to state 15
+    PARENTESIS_APERTURA shift and go to state 16
+    COMILLA_SIMPLE  shift and go to state 17
+
+    digito                         shift and go to state 20
+    resto                          shift and go to state 29
+    letra                          shift and go to state 18
+    simbolo                        shift and go to state 21
+    pg                             shift and go to state 22
+    ex                             shift and go to state 23
+    ps                             shift and go to state 24
+    c                              shift and go to state 25
+    empty                          shift and go to state 26
+    ia                             shift and go to state 10
+    ea                             shift and go to state 11
+    pa                             shift and go to state 12
+    cs                             shift and go to state 13
+
+state 4
+
+    (3) gt -> pg . resto
+    (7) resto -> . letra resto
+    (8) resto -> . digito resto
+    (9) resto -> . simbolo resto
+    (10) resto -> . pg resto
+    (11) resto -> . ex resto
+    (12) resto -> . ps resto
+    (13) resto -> . c resto
+    (14) resto -> . empty
+    (34) letra -> . PALABRA
+    (35) digito -> . NUMERO
+    (15) simbolo -> . SIMBOLOS
+    (16) simbolo -> . COMA
+    (17) pg -> . ia pb ic
+    (18) ex -> . ea pb ec
+    (19) ps -> . pa pb pc
+    (20) c -> . cs pb cs
+    (37) empty -> .
+    (21) ia -> . INTERROGACION_APERTURA
+    (23) ea -> . ADMIRACION_APERTURA
+    (25) pa -> . PARENTESIS_APERTURA
+    (27) cs -> . COMILLA_SIMPLE
+
+    PALABRA         shift and go to state 8
+    NUMERO          shift and go to state 9
+    SIMBOLOS        shift and go to state 27
+    COMA            shift and go to state 28
+    $end            reduce using rule 37 (empty -> .)
+    INTERROGACION_APERTURA shift and go to state 14
+    ADMIRACION_APERTURA shift and go to state 15
+    PARENTESIS_APERTURA shift and go to state 16
+    COMILLA_SIMPLE  shift and go to state 17
+
+    pg                             shift and go to state 22
+    resto                          shift and go to state 30
+    letra                          shift and go to state 18
+    digito                         shift and go to state 20
+    simbolo                        shift and go to state 21
+    ex                             shift and go to state 23
+    ps                             shift and go to state 24
+    c                              shift and go to state 25
+    empty                          shift and go to state 26
+    ia                             shift and go to state 10
+    ea                             shift and go to state 11
+    pa                             shift and go to state 12
+    cs                             shift and go to state 13
+
+state 5
+
+    (4) gt -> ex . resto
+    (7) resto -> . letra resto
+    (8) resto -> . digito resto
+    (9) resto -> . simbolo resto
+    (10) resto -> . pg resto
+    (11) resto -> . ex resto
+    (12) resto -> . ps resto
+    (13) resto -> . c resto
+    (14) resto -> . empty
+    (34) letra -> . PALABRA
+    (35) digito -> . NUMERO
+    (15) simbolo -> . SIMBOLOS
+    (16) simbolo -> . COMA
+    (17) pg -> . ia pb ic
+    (18) ex -> . ea pb ec
+    (19) ps -> . pa pb pc
+    (20) c -> . cs pb cs
+    (37) empty -> .
+    (21) ia -> . INTERROGACION_APERTURA
+    (23) ea -> . ADMIRACION_APERTURA
+    (25) pa -> . PARENTESIS_APERTURA
+    (27) cs -> . COMILLA_SIMPLE
+
+    PALABRA         shift and go to state 8
+    NUMERO          shift and go to state 9
+    SIMBOLOS        shift and go to state 27
+    COMA            shift and go to state 28
+    $end            reduce using rule 37 (empty -> .)
+    INTERROGACION_APERTURA shift and go to state 14
+    ADMIRACION_APERTURA shift and go to state 15
+    PARENTESIS_APERTURA shift and go to state 16
+    COMILLA_SIMPLE  shift and go to state 17
+
+    ex                             shift and go to state 23
+    resto                          shift and go to state 31
+    letra                          shift and go to state 18
+    digito                         shift and go to state 20
+    simbolo                        shift and go to state 21
+    pg                             shift and go to state 22
+    ps                             shift and go to state 24
+    c                              shift and go to state 25
+    empty                          shift and go to state 26
+    ia                             shift and go to state 10
+    ea                             shift and go to state 11
+    pa                             shift and go to state 12
+    cs                             shift and go to state 13
+
+state 6
+
+    (5) gt -> ps . resto
+    (7) resto -> . letra resto
+    (8) resto -> . digito resto
+    (9) resto -> . simbolo resto
+    (10) resto -> . pg resto
+    (11) resto -> . ex resto
+    (12) resto -> . ps resto
+    (13) resto -> . c resto
+    (14) resto -> . empty
+    (34) letra -> . PALABRA
+    (35) digito -> . NUMERO
+    (15) simbolo -> . SIMBOLOS
+    (16) simbolo -> . COMA
+    (17) pg -> . ia pb ic
+    (18) ex -> . ea pb ec
+    (19) ps -> . pa pb pc
+    (20) c -> . cs pb cs
+    (37) empty -> .
+    (21) ia -> . INTERROGACION_APERTURA
+    (23) ea -> . ADMIRACION_APERTURA
+    (25) pa -> . PARENTESIS_APERTURA
+    (27) cs -> . COMILLA_SIMPLE
+
+    PALABRA         shift and go to state 8
+    NUMERO          shift and go to state 9
+    SIMBOLOS        shift and go to state 27
+    COMA            shift and go to state 28
+    $end            reduce using rule 37 (empty -> .)
+    INTERROGACION_APERTURA shift and go to state 14
+    ADMIRACION_APERTURA shift and go to state 15
+    PARENTESIS_APERTURA shift and go to state 16
+    COMILLA_SIMPLE  shift and go to state 17
+
+    ps                             shift and go to state 24
+    resto                          shift and go to state 32
+    letra                          shift and go to state 18
+    digito                         shift and go to state 20
+    simbolo                        shift and go to state 21
+    pg                             shift and go to state 22
+    ex                             shift and go to state 23
+    c                              shift and go to state 25
+    empty                          shift and go to state 26
+    ia                             shift and go to state 10
+    ea                             shift and go to state 11
+    pa                             shift and go to state 12
+    cs                             shift and go to state 13
+
+state 7
+
+    (6) gt -> c . resto
+    (7) resto -> . letra resto
+    (8) resto -> . digito resto
+    (9) resto -> . simbolo resto
+    (10) resto -> . pg resto
+    (11) resto -> . ex resto
+    (12) resto -> . ps resto
+    (13) resto -> . c resto
+    (14) resto -> . empty
+    (34) letra -> . PALABRA
+    (35) digito -> . NUMERO
+    (15) simbolo -> . SIMBOLOS
+    (16) simbolo -> . COMA
+    (17) pg -> . ia pb ic
+    (18) ex -> . ea pb ec
+    (19) ps -> . pa pb pc
+    (20) c -> . cs pb cs
+    (37) empty -> .
+    (21) ia -> . INTERROGACION_APERTURA
+    (23) ea -> . ADMIRACION_APERTURA
+    (25) pa -> . PARENTESIS_APERTURA
+    (27) cs -> . COMILLA_SIMPLE
+
+    PALABRA         shift and go to state 8
+    NUMERO          shift and go to state 9
+    SIMBOLOS        shift and go to state 27
+    COMA            shift and go to state 28
+    $end            reduce using rule 37 (empty -> .)
+    INTERROGACION_APERTURA shift and go to state 14
+    ADMIRACION_APERTURA shift and go to state 15
+    PARENTESIS_APERTURA shift and go to state 16
+    COMILLA_SIMPLE  shift and go to state 17
+
+    c                              shift and go to state 25
+    resto                          shift and go to state 33
+    letra                          shift and go to state 18
+    digito                         shift and go to state 20
+    simbolo                        shift and go to state 21
+    pg                             shift and go to state 22
+    ex                             shift and go to state 23
+    ps                             shift and go to state 24
+    empty                          shift and go to state 26
+    ia                             shift and go to state 10
+    ea                             shift and go to state 11
+    pa                             shift and go to state 12
+    cs                             shift and go to state 13
+
+state 8
+
+    (34) letra -> PALABRA .
+
+    PALABRA         reduce using rule 34 (letra -> PALABRA .)
+    NUMERO          reduce using rule 34 (letra -> PALABRA .)
+    SIMBOLOS        reduce using rule 34 (letra -> PALABRA .)
+    COMA            reduce using rule 34 (letra -> PALABRA .)
+    INTERROGACION_APERTURA reduce using rule 34 (letra -> PALABRA .)
+    ADMIRACION_APERTURA reduce using rule 34 (letra -> PALABRA .)
+    PARENTESIS_APERTURA reduce using rule 34 (letra -> PALABRA .)
+    COMILLA_SIMPLE  reduce using rule 34 (letra -> PALABRA .)
+    $end            reduce using rule 34 (letra -> PALABRA .)
+    INTERROGACION_CIERRE reduce using rule 34 (letra -> PALABRA .)
+    ADMIRACION_CIERRE reduce using rule 34 (letra -> PALABRA .)
+    PARENTESIS_CIERRE reduce using rule 34 (letra -> PALABRA .)
+
+
+state 9
+
+    (35) digito -> NUMERO .
+
+    PALABRA         reduce using rule 35 (digito -> NUMERO .)
+    NUMERO          reduce using rule 35 (digito -> NUMERO .)
+    SIMBOLOS        reduce using rule 35 (digito -> NUMERO .)
+    COMA            reduce using rule 35 (digito -> NUMERO .)
+    INTERROGACION_APERTURA reduce using rule 35 (digito -> NUMERO .)
+    ADMIRACION_APERTURA reduce using rule 35 (digito -> NUMERO .)
+    PARENTESIS_APERTURA reduce using rule 35 (digito -> NUMERO .)
+    COMILLA_SIMPLE  reduce using rule 35 (digito -> NUMERO .)
+    $end            reduce using rule 35 (digito -> NUMERO .)
+    INTERROGACION_CIERRE reduce using rule 35 (digito -> NUMERO .)
+    ADMIRACION_CIERRE reduce using rule 35 (digito -> NUMERO .)
+    PARENTESIS_CIERRE reduce using rule 35 (digito -> NUMERO .)
+
+
+state 10
+
+    (17) pg -> ia . pb ic
+    (28) pb -> . letra comp
+    (29) pb -> . digito comp
+    (34) letra -> . PALABRA
+    (35) digito -> . NUMERO
+
+    PALABRA         shift and go to state 8
+    NUMERO          shift and go to state 9
+
+    pb                             shift and go to state 34
+    letra                          shift and go to state 35
+    digito                         shift and go to state 36
+
+state 11
+
+    (18) ex -> ea . pb ec
+    (28) pb -> . letra comp
+    (29) pb -> . digito comp
+    (34) letra -> . PALABRA
+    (35) digito -> . NUMERO
+
+    PALABRA         shift and go to state 8
+    NUMERO          shift and go to state 9
+
+    pb                             shift and go to state 37
+    letra                          shift and go to state 35
+    digito                         shift and go to state 36
+
+state 12
+
+    (19) ps -> pa . pb pc
+    (28) pb -> . letra comp
+    (29) pb -> . digito comp
+    (34) letra -> . PALABRA
+    (35) digito -> . NUMERO
+
+    PALABRA         shift and go to state 8
+    NUMERO          shift and go to state 9
+
+    pb                             shift and go to state 38
+    letra                          shift and go to state 35
+    digito                         shift and go to state 36
+
+state 13
+
+    (20) c -> cs . pb cs
+    (28) pb -> . letra comp
+    (29) pb -> . digito comp
+    (34) letra -> . PALABRA
+    (35) digito -> . NUMERO
+
+    PALABRA         shift and go to state 8
+    NUMERO          shift and go to state 9
+
+    pb                             shift and go to state 39
+    letra                          shift and go to state 35
+    digito                         shift and go to state 36
+
+state 14
+
+    (21) ia -> INTERROGACION_APERTURA .
+
+    PALABRA         reduce using rule 21 (ia -> INTERROGACION_APERTURA .)
+    NUMERO          reduce using rule 21 (ia -> INTERROGACION_APERTURA .)
+
+
+state 15
+
+    (23) ea -> ADMIRACION_APERTURA .
+
+    PALABRA         reduce using rule 23 (ea -> ADMIRACION_APERTURA .)
+    NUMERO          reduce using rule 23 (ea -> ADMIRACION_APERTURA .)
+
+
+state 16
+
+    (25) pa -> PARENTESIS_APERTURA .
+
+    PALABRA         reduce using rule 25 (pa -> PARENTESIS_APERTURA .)
+    NUMERO          reduce using rule 25 (pa -> PARENTESIS_APERTURA .)
+
+
+state 17
+
+    (27) cs -> COMILLA_SIMPLE .
+
+    PALABRA         reduce using rule 27 (cs -> COMILLA_SIMPLE .)
+    NUMERO          reduce using rule 27 (cs -> COMILLA_SIMPLE .)
+    SIMBOLOS        reduce using rule 27 (cs -> COMILLA_SIMPLE .)
+    COMA            reduce using rule 27 (cs -> COMILLA_SIMPLE .)
+    INTERROGACION_APERTURA reduce using rule 27 (cs -> COMILLA_SIMPLE .)
+    ADMIRACION_APERTURA reduce using rule 27 (cs -> COMILLA_SIMPLE .)
+    PARENTESIS_APERTURA reduce using rule 27 (cs -> COMILLA_SIMPLE .)
+    COMILLA_SIMPLE  reduce using rule 27 (cs -> COMILLA_SIMPLE .)
+    $end            reduce using rule 27 (cs -> COMILLA_SIMPLE .)
+
+
+state 18
+
+    (7) resto -> letra . resto
+    (7) resto -> . letra resto
+    (8) resto -> . digito resto
+    (9) resto -> . simbolo resto
+    (10) resto -> . pg resto
+    (11) resto -> . ex resto
+    (12) resto -> . ps resto
+    (13) resto -> . c resto
+    (14) resto -> . empty
+    (34) letra -> . PALABRA
+    (35) digito -> . NUMERO
+    (15) simbolo -> . SIMBOLOS
+    (16) simbolo -> . COMA
+    (17) pg -> . ia pb ic
+    (18) ex -> . ea pb ec
+    (19) ps -> . pa pb pc
+    (20) c -> . cs pb cs
+    (37) empty -> .
+    (21) ia -> . INTERROGACION_APERTURA
+    (23) ea -> . ADMIRACION_APERTURA
+    (25) pa -> . PARENTESIS_APERTURA
+    (27) cs -> . COMILLA_SIMPLE
+
+    PALABRA         shift and go to state 8
+    NUMERO          shift and go to state 9
+    SIMBOLOS        shift and go to state 27
+    COMA            shift and go to state 28
+    $end            reduce using rule 37 (empty -> .)
+    INTERROGACION_APERTURA shift and go to state 14
+    ADMIRACION_APERTURA shift and go to state 15
+    PARENTESIS_APERTURA shift and go to state 16
+    COMILLA_SIMPLE  shift and go to state 17
+
+    letra                          shift and go to state 18
+    resto                          shift and go to state 40
+    digito                         shift and go to state 20
+    simbolo                        shift and go to state 21
+    pg                             shift and go to state 22
+    ex                             shift and go to state 23
+    ps                             shift and go to state 24
+    c                              shift and go to state 25
+    empty                          shift and go to state 26
+    ia                             shift and go to state 10
+    ea                             shift and go to state 11
+    pa                             shift and go to state 12
+    cs                             shift and go to state 13
+
+state 19
+
+    (1) gt -> letra resto .
+
+    $end            reduce using rule 1 (gt -> letra resto .)
+
+
+state 20
+
+    (8) resto -> digito . resto
+    (7) resto -> . letra resto
+    (8) resto -> . digito resto
+    (9) resto -> . simbolo resto
+    (10) resto -> . pg resto
+    (11) resto -> . ex resto
+    (12) resto -> . ps resto
+    (13) resto -> . c resto
+    (14) resto -> . empty
+    (34) letra -> . PALABRA
+    (35) digito -> . NUMERO
+    (15) simbolo -> . SIMBOLOS
+    (16) simbolo -> . COMA
+    (17) pg -> . ia pb ic
+    (18) ex -> . ea pb ec
+    (19) ps -> . pa pb pc
+    (20) c -> . cs pb cs
+    (37) empty -> .
+    (21) ia -> . INTERROGACION_APERTURA
+    (23) ea -> . ADMIRACION_APERTURA
+    (25) pa -> . PARENTESIS_APERTURA
+    (27) cs -> . COMILLA_SIMPLE
+
+    PALABRA         shift and go to state 8
+    NUMERO          shift and go to state 9
+    SIMBOLOS        shift and go to state 27
+    COMA            shift and go to state 28
+    $end            reduce using rule 37 (empty -> .)
+    INTERROGACION_APERTURA shift and go to state 14
+    ADMIRACION_APERTURA shift and go to state 15
+    PARENTESIS_APERTURA shift and go to state 16
+    COMILLA_SIMPLE  shift and go to state 17
+
+    digito                         shift and go to state 20
+    resto                          shift and go to state 41
+    letra                          shift and go to state 18
+    simbolo                        shift and go to state 21
+    pg                             shift and go to state 22
+    ex                             shift and go to state 23
+    ps                             shift and go to state 24
+    c                              shift and go to state 25
+    empty                          shift and go to state 26
+    ia                             shift and go to state 10
+    ea                             shift and go to state 11
+    pa                             shift and go to state 12
+    cs                             shift and go to state 13
+
+state 21
+
+    (9) resto -> simbolo . resto
+    (7) resto -> . letra resto
+    (8) resto -> . digito resto
+    (9) resto -> . simbolo resto
+    (10) resto -> . pg resto
+    (11) resto -> . ex resto
+    (12) resto -> . ps resto
+    (13) resto -> . c resto
+    (14) resto -> . empty
+    (34) letra -> . PALABRA
+    (35) digito -> . NUMERO
+    (15) simbolo -> . SIMBOLOS
+    (16) simbolo -> . COMA
+    (17) pg -> . ia pb ic
+    (18) ex -> . ea pb ec
+    (19) ps -> . pa pb pc
+    (20) c -> . cs pb cs
+    (37) empty -> .
+    (21) ia -> . INTERROGACION_APERTURA
+    (23) ea -> . ADMIRACION_APERTURA
+    (25) pa -> . PARENTESIS_APERTURA
+    (27) cs -> . COMILLA_SIMPLE
+
+    PALABRA         shift and go to state 8
+    NUMERO          shift and go to state 9
+    SIMBOLOS        shift and go to state 27
+    COMA            shift and go to state 28
+    $end            reduce using rule 37 (empty -> .)
+    INTERROGACION_APERTURA shift and go to state 14
+    ADMIRACION_APERTURA shift and go to state 15
+    PARENTESIS_APERTURA shift and go to state 16
+    COMILLA_SIMPLE  shift and go to state 17
+
+    simbolo                        shift and go to state 21
+    resto                          shift and go to state 42
+    letra                          shift and go to state 18
+    digito                         shift and go to state 20
+    pg                             shift and go to state 22
+    ex                             shift and go to state 23
+    ps                             shift and go to state 24
+    c                              shift and go to state 25
+    empty                          shift and go to state 26
+    ia                             shift and go to state 10
+    ea                             shift and go to state 11
+    pa                             shift and go to state 12
+    cs                             shift and go to state 13
+
+state 22
+
+    (10) resto -> pg . resto
+    (7) resto -> . letra resto
+    (8) resto -> . digito resto
+    (9) resto -> . simbolo resto
+    (10) resto -> . pg resto
+    (11) resto -> . ex resto
+    (12) resto -> . ps resto
+    (13) resto -> . c resto
+    (14) resto -> . empty
+    (34) letra -> . PALABRA
+    (35) digito -> . NUMERO
+    (15) simbolo -> . SIMBOLOS
+    (16) simbolo -> . COMA
+    (17) pg -> . ia pb ic
+    (18) ex -> . ea pb ec
+    (19) ps -> . pa pb pc
+    (20) c -> . cs pb cs
+    (37) empty -> .
+    (21) ia -> . INTERROGACION_APERTURA
+    (23) ea -> . ADMIRACION_APERTURA
+    (25) pa -> . PARENTESIS_APERTURA
+    (27) cs -> . COMILLA_SIMPLE
+
+    PALABRA         shift and go to state 8
+    NUMERO          shift and go to state 9
+    SIMBOLOS        shift and go to state 27
+    COMA            shift and go to state 28
+    $end            reduce using rule 37 (empty -> .)
+    INTERROGACION_APERTURA shift and go to state 14
+    ADMIRACION_APERTURA shift and go to state 15
+    PARENTESIS_APERTURA shift and go to state 16
+    COMILLA_SIMPLE  shift and go to state 17
+
+    pg                             shift and go to state 22
+    resto                          shift and go to state 43
+    letra                          shift and go to state 18
+    digito                         shift and go to state 20
+    simbolo                        shift and go to state 21
+    ex                             shift and go to state 23
+    ps                             shift and go to state 24
+    c                              shift and go to state 25
+    empty                          shift and go to state 26
+    ia                             shift and go to state 10
+    ea                             shift and go to state 11
+    pa                             shift and go to state 12
+    cs                             shift and go to state 13
+
+state 23
+
+    (11) resto -> ex . resto
+    (7) resto -> . letra resto
+    (8) resto -> . digito resto
+    (9) resto -> . simbolo resto
+    (10) resto -> . pg resto
+    (11) resto -> . ex resto
+    (12) resto -> . ps resto
+    (13) resto -> . c resto
+    (14) resto -> . empty
+    (34) letra -> . PALABRA
+    (35) digito -> . NUMERO
+    (15) simbolo -> . SIMBOLOS
+    (16) simbolo -> . COMA
+    (17) pg -> . ia pb ic
+    (18) ex -> . ea pb ec
+    (19) ps -> . pa pb pc
+    (20) c -> . cs pb cs
+    (37) empty -> .
+    (21) ia -> . INTERROGACION_APERTURA
+    (23) ea -> . ADMIRACION_APERTURA
+    (25) pa -> . PARENTESIS_APERTURA
+    (27) cs -> . COMILLA_SIMPLE
+
+    PALABRA         shift and go to state 8
+    NUMERO          shift and go to state 9
+    SIMBOLOS        shift and go to state 27
+    COMA            shift and go to state 28
+    $end            reduce using rule 37 (empty -> .)
+    INTERROGACION_APERTURA shift and go to state 14
+    ADMIRACION_APERTURA shift and go to state 15
+    PARENTESIS_APERTURA shift and go to state 16
+    COMILLA_SIMPLE  shift and go to state 17
+
+    ex                             shift and go to state 23
+    resto                          shift and go to state 44
+    letra                          shift and go to state 18
+    digito                         shift and go to state 20
+    simbolo                        shift and go to state 21
+    pg                             shift and go to state 22
+    ps                             shift and go to state 24
+    c                              shift and go to state 25
+    empty                          shift and go to state 26
+    ia                             shift and go to state 10
+    ea                             shift and go to state 11
+    pa                             shift and go to state 12
+    cs                             shift and go to state 13
+
+state 24
+
+    (12) resto -> ps . resto
+    (7) resto -> . letra resto
+    (8) resto -> . digito resto
+    (9) resto -> . simbolo resto
+    (10) resto -> . pg resto
+    (11) resto -> . ex resto
+    (12) resto -> . ps resto
+    (13) resto -> . c resto
+    (14) resto -> . empty
+    (34) letra -> . PALABRA
+    (35) digito -> . NUMERO
+    (15) simbolo -> . SIMBOLOS
+    (16) simbolo -> . COMA
+    (17) pg -> . ia pb ic
+    (18) ex -> . ea pb ec
+    (19) ps -> . pa pb pc
+    (20) c -> . cs pb cs
+    (37) empty -> .
+    (21) ia -> . INTERROGACION_APERTURA
+    (23) ea -> . ADMIRACION_APERTURA
+    (25) pa -> . PARENTESIS_APERTURA
+    (27) cs -> . COMILLA_SIMPLE
+
+    PALABRA         shift and go to state 8
+    NUMERO          shift and go to state 9
+    SIMBOLOS        shift and go to state 27
+    COMA            shift and go to state 28
+    $end            reduce using rule 37 (empty -> .)
+    INTERROGACION_APERTURA shift and go to state 14
+    ADMIRACION_APERTURA shift and go to state 15
+    PARENTESIS_APERTURA shift and go to state 16
+    COMILLA_SIMPLE  shift and go to state 17
+
+    ps                             shift and go to state 24
+    resto                          shift and go to state 45
+    letra                          shift and go to state 18
+    digito                         shift and go to state 20
+    simbolo                        shift and go to state 21
+    pg                             shift and go to state 22
+    ex                             shift and go to state 23
+    c                              shift and go to state 25
+    empty                          shift and go to state 26
+    ia                             shift and go to state 10
+    ea                             shift and go to state 11
+    pa                             shift and go to state 12
+    cs                             shift and go to state 13
+
+state 25
+
+    (13) resto -> c . resto
+    (7) resto -> . letra resto
+    (8) resto -> . digito resto
+    (9) resto -> . simbolo resto
+    (10) resto -> . pg resto
+    (11) resto -> . ex resto
+    (12) resto -> . ps resto
+    (13) resto -> . c resto
+    (14) resto -> . empty
+    (34) letra -> . PALABRA
+    (35) digito -> . NUMERO
+    (15) simbolo -> . SIMBOLOS
+    (16) simbolo -> . COMA
+    (17) pg -> . ia pb ic
+    (18) ex -> . ea pb ec
+    (19) ps -> . pa pb pc
+    (20) c -> . cs pb cs
+    (37) empty -> .
+    (21) ia -> . INTERROGACION_APERTURA
+    (23) ea -> . ADMIRACION_APERTURA
+    (25) pa -> . PARENTESIS_APERTURA
+    (27) cs -> . COMILLA_SIMPLE
+
+    PALABRA         shift and go to state 8
+    NUMERO          shift and go to state 9
+    SIMBOLOS        shift and go to state 27
+    COMA            shift and go to state 28
+    $end            reduce using rule 37 (empty -> .)
+    INTERROGACION_APERTURA shift and go to state 14
+    ADMIRACION_APERTURA shift and go to state 15
+    PARENTESIS_APERTURA shift and go to state 16
+    COMILLA_SIMPLE  shift and go to state 17
+
+    c                              shift and go to state 25
+    resto                          shift and go to state 46
+    letra                          shift and go to state 18
+    digito                         shift and go to state 20
+    simbolo                        shift and go to state 21
+    pg                             shift and go to state 22
+    ex                             shift and go to state 23
+    ps                             shift and go to state 24
+    empty                          shift and go to state 26
+    ia                             shift and go to state 10
+    ea                             shift and go to state 11
+    pa                             shift and go to state 12
+    cs                             shift and go to state 13
+
+state 26
+
+    (14) resto -> empty .
+
+    $end            reduce using rule 14 (resto -> empty .)
+
+
+state 27
+
+    (15) simbolo -> SIMBOLOS .
+
+    PALABRA         reduce using rule 15 (simbolo -> SIMBOLOS .)
+    NUMERO          reduce using rule 15 (simbolo -> SIMBOLOS .)
+    SIMBOLOS        reduce using rule 15 (simbolo -> SIMBOLOS .)
+    COMA            reduce using rule 15 (simbolo -> SIMBOLOS .)
+    INTERROGACION_APERTURA reduce using rule 15 (simbolo -> SIMBOLOS .)
+    ADMIRACION_APERTURA reduce using rule 15 (simbolo -> SIMBOLOS .)
+    PARENTESIS_APERTURA reduce using rule 15 (simbolo -> SIMBOLOS .)
+    COMILLA_SIMPLE  reduce using rule 15 (simbolo -> SIMBOLOS .)
+    $end            reduce using rule 15 (simbolo -> SIMBOLOS .)
+
+
+state 28
+
+    (16) simbolo -> COMA .
+
+    PALABRA         reduce using rule 16 (simbolo -> COMA .)
+    NUMERO          reduce using rule 16 (simbolo -> COMA .)
+    SIMBOLOS        reduce using rule 16 (simbolo -> COMA .)
+    COMA            reduce using rule 16 (simbolo -> COMA .)
+    INTERROGACION_APERTURA reduce using rule 16 (simbolo -> COMA .)
+    ADMIRACION_APERTURA reduce using rule 16 (simbolo -> COMA .)
+    PARENTESIS_APERTURA reduce using rule 16 (simbolo -> COMA .)
+    COMILLA_SIMPLE  reduce using rule 16 (simbolo -> COMA .)
+    $end            reduce using rule 16 (simbolo -> COMA .)
+
+
+state 29
+
+    (2) gt -> digito resto .
+
+    $end            reduce using rule 2 (gt -> digito resto .)
+
+
+state 30
+
+    (3) gt -> pg resto .
+
+    $end            reduce using rule 3 (gt -> pg resto .)
+
+
+state 31
+
+    (4) gt -> ex resto .
+
+    $end            reduce using rule 4 (gt -> ex resto .)
+
+
+state 32
+
+    (5) gt -> ps resto .
+
+    $end            reduce using rule 5 (gt -> ps resto .)
+
+
+state 33
+
+    (6) gt -> c resto .
+
+    $end            reduce using rule 6 (gt -> c resto .)
+
+
+state 34
+
+    (17) pg -> ia pb . ic
+    (22) ic -> . INTERROGACION_CIERRE
+
+    INTERROGACION_CIERRE shift and go to state 48
+
+    ic                             shift and go to state 47
+
+state 35
+
+    (28) pb -> letra . comp
+    (30) comp -> . letra comp
+    (31) comp -> . digito comp
+    (32) comp -> . coma comp
+    (33) comp -> . empty
+    (34) letra -> . PALABRA
+    (35) digito -> . NUMERO
+    (36) coma -> . COMA
+    (37) empty -> .
+
+    PALABRA         shift and go to state 8
+    NUMERO          shift and go to state 9
+    COMA            shift and go to state 54
+    INTERROGACION_CIERRE reduce using rule 37 (empty -> .)
+    ADMIRACION_CIERRE reduce using rule 37 (empty -> .)
+    PARENTESIS_CIERRE reduce using rule 37 (empty -> .)
+    COMILLA_SIMPLE  reduce using rule 37 (empty -> .)
+
+    letra                          shift and go to state 49
+    comp                           shift and go to state 50
+    digito                         shift and go to state 51
+    coma                           shift and go to state 52
+    empty                          shift and go to state 53
+
+state 36
+
+    (29) pb -> digito . comp
+    (30) comp -> . letra comp
+    (31) comp -> . digito comp
+    (32) comp -> . coma comp
+    (33) comp -> . empty
+    (34) letra -> . PALABRA
+    (35) digito -> . NUMERO
+    (36) coma -> . COMA
+    (37) empty -> .
+
+    PALABRA         shift and go to state 8
+    NUMERO          shift and go to state 9
+    COMA            shift and go to state 54
+    INTERROGACION_CIERRE reduce using rule 37 (empty -> .)
+    ADMIRACION_CIERRE reduce using rule 37 (empty -> .)
+    PARENTESIS_CIERRE reduce using rule 37 (empty -> .)
+    COMILLA_SIMPLE  reduce using rule 37 (empty -> .)
+
+    digito                         shift and go to state 51
+    comp                           shift and go to state 55
+    letra                          shift and go to state 49
+    coma                           shift and go to state 52
+    empty                          shift and go to state 53
+
+state 37
+
+    (18) ex -> ea pb . ec
+    (24) ec -> . ADMIRACION_CIERRE
+
+    ADMIRACION_CIERRE shift and go to state 57
+
+    ec                             shift and go to state 56
+
+state 38
+
+    (19) ps -> pa pb . pc
+    (26) pc -> . PARENTESIS_CIERRE
+
+    PARENTESIS_CIERRE shift and go to state 59
+
+    pc                             shift and go to state 58
+
+state 39
+
+    (20) c -> cs pb . cs
+    (27) cs -> . COMILLA_SIMPLE
+
+    COMILLA_SIMPLE  shift and go to state 17
+
+    cs                             shift and go to state 60
+
+state 40
+
+    (7) resto -> letra resto .
+
+    $end            reduce using rule 7 (resto -> letra resto .)
+
+
+state 41
+
+    (8) resto -> digito resto .
+
+    $end            reduce using rule 8 (resto -> digito resto .)
+
+
+state 42
+
+    (9) resto -> simbolo resto .
+
+    $end            reduce using rule 9 (resto -> simbolo resto .)
+
+
+state 43
+
+    (10) resto -> pg resto .
+
+    $end            reduce using rule 10 (resto -> pg resto .)
+
+
+state 44
+
+    (11) resto -> ex resto .
+
+    $end            reduce using rule 11 (resto -> ex resto .)
+
+
+state 45
+
+    (12) resto -> ps resto .
+
+    $end            reduce using rule 12 (resto -> ps resto .)
+
+
+state 46
+
+    (13) resto -> c resto .
+
+    $end            reduce using rule 13 (resto -> c resto .)
+
+
+state 47
+
+    (17) pg -> ia pb ic .
+
+    PALABRA         reduce using rule 17 (pg -> ia pb ic .)
+    NUMERO          reduce using rule 17 (pg -> ia pb ic .)
+    SIMBOLOS        reduce using rule 17 (pg -> ia pb ic .)
+    COMA            reduce using rule 17 (pg -> ia pb ic .)
+    INTERROGACION_APERTURA reduce using rule 17 (pg -> ia pb ic .)
+    ADMIRACION_APERTURA reduce using rule 17 (pg -> ia pb ic .)
+    PARENTESIS_APERTURA reduce using rule 17 (pg -> ia pb ic .)
+    COMILLA_SIMPLE  reduce using rule 17 (pg -> ia pb ic .)
+    $end            reduce using rule 17 (pg -> ia pb ic .)
+
+
+state 48
+
+    (22) ic -> INTERROGACION_CIERRE .
+
+    PALABRA         reduce using rule 22 (ic -> INTERROGACION_CIERRE .)
+    NUMERO          reduce using rule 22 (ic -> INTERROGACION_CIERRE .)
+    SIMBOLOS        reduce using rule 22 (ic -> INTERROGACION_CIERRE .)
+    COMA            reduce using rule 22 (ic -> INTERROGACION_CIERRE .)
+    INTERROGACION_APERTURA reduce using rule 22 (ic -> INTERROGACION_CIERRE .)
+    ADMIRACION_APERTURA reduce using rule 22 (ic -> INTERROGACION_CIERRE .)
+    PARENTESIS_APERTURA reduce using rule 22 (ic -> INTERROGACION_CIERRE .)
+    COMILLA_SIMPLE  reduce using rule 22 (ic -> INTERROGACION_CIERRE .)
+    $end            reduce using rule 22 (ic -> INTERROGACION_CIERRE .)
+
+
+state 49
+
+    (30) comp -> letra . comp
+    (30) comp -> . letra comp
+    (31) comp -> . digito comp
+    (32) comp -> . coma comp
+    (33) comp -> . empty
+    (34) letra -> . PALABRA
+    (35) digito -> . NUMERO
+    (36) coma -> . COMA
+    (37) empty -> .
+
+    PALABRA         shift and go to state 8
+    NUMERO          shift and go to state 9
+    COMA            shift and go to state 54
+    INTERROGACION_CIERRE reduce using rule 37 (empty -> .)
+    ADMIRACION_CIERRE reduce using rule 37 (empty -> .)
+    PARENTESIS_CIERRE reduce using rule 37 (empty -> .)
+    COMILLA_SIMPLE  reduce using rule 37 (empty -> .)
+
+    letra                          shift and go to state 49
+    comp                           shift and go to state 61
+    digito                         shift and go to state 51
+    coma                           shift and go to state 52
+    empty                          shift and go to state 53
+
+state 50
+
+    (28) pb -> letra comp .
+
+    INTERROGACION_CIERRE reduce using rule 28 (pb -> letra comp .)
+    ADMIRACION_CIERRE reduce using rule 28 (pb -> letra comp .)
+    PARENTESIS_CIERRE reduce using rule 28 (pb -> letra comp .)
+    COMILLA_SIMPLE  reduce using rule 28 (pb -> letra comp .)
+
+
+state 51
+
+    (31) comp -> digito . comp
+    (30) comp -> . letra comp
+    (31) comp -> . digito comp
+    (32) comp -> . coma comp
+    (33) comp -> . empty
+    (34) letra -> . PALABRA
+    (35) digito -> . NUMERO
+    (36) coma -> . COMA
+    (37) empty -> .
+
+    PALABRA         shift and go to state 8
+    NUMERO          shift and go to state 9
+    COMA            shift and go to state 54
+    INTERROGACION_CIERRE reduce using rule 37 (empty -> .)
+    ADMIRACION_CIERRE reduce using rule 37 (empty -> .)
+    PARENTESIS_CIERRE reduce using rule 37 (empty -> .)
+    COMILLA_SIMPLE  reduce using rule 37 (empty -> .)
+
+    digito                         shift and go to state 51
+    comp                           shift and go to state 62
+    letra                          shift and go to state 49
+    coma                           shift and go to state 52
+    empty                          shift and go to state 53
+
+state 52
+
+    (32) comp -> coma . comp
+    (30) comp -> . letra comp
+    (31) comp -> . digito comp
+    (32) comp -> . coma comp
+    (33) comp -> . empty
+    (34) letra -> . PALABRA
+    (35) digito -> . NUMERO
+    (36) coma -> . COMA
+    (37) empty -> .
+
+    PALABRA         shift and go to state 8
+    NUMERO          shift and go to state 9
+    COMA            shift and go to state 54
+    INTERROGACION_CIERRE reduce using rule 37 (empty -> .)
+    ADMIRACION_CIERRE reduce using rule 37 (empty -> .)
+    PARENTESIS_CIERRE reduce using rule 37 (empty -> .)
+    COMILLA_SIMPLE  reduce using rule 37 (empty -> .)
+
+    coma                           shift and go to state 52
+    comp                           shift and go to state 63
+    letra                          shift and go to state 49
+    digito                         shift and go to state 51
+    empty                          shift and go to state 53
+
+state 53
+
+    (33) comp -> empty .
+
+    INTERROGACION_CIERRE reduce using rule 33 (comp -> empty .)
+    ADMIRACION_CIERRE reduce using rule 33 (comp -> empty .)
+    PARENTESIS_CIERRE reduce using rule 33 (comp -> empty .)
+    COMILLA_SIMPLE  reduce using rule 33 (comp -> empty .)
+
+
+state 54
+
+    (36) coma -> COMA .
+
+    PALABRA         reduce using rule 36 (coma -> COMA .)
+    NUMERO          reduce using rule 36 (coma -> COMA .)
+    COMA            reduce using rule 36 (coma -> COMA .)
+    INTERROGACION_CIERRE reduce using rule 36 (coma -> COMA .)
+    ADMIRACION_CIERRE reduce using rule 36 (coma -> COMA .)
+    PARENTESIS_CIERRE reduce using rule 36 (coma -> COMA .)
+    COMILLA_SIMPLE  reduce using rule 36 (coma -> COMA .)
+
+
+state 55
+
+    (29) pb -> digito comp .
+
+    INTERROGACION_CIERRE reduce using rule 29 (pb -> digito comp .)
+    ADMIRACION_CIERRE reduce using rule 29 (pb -> digito comp .)
+    PARENTESIS_CIERRE reduce using rule 29 (pb -> digito comp .)
+    COMILLA_SIMPLE  reduce using rule 29 (pb -> digito comp .)
+
+
+state 56
+
+    (18) ex -> ea pb ec .
+
+    PALABRA         reduce using rule 18 (ex -> ea pb ec .)
+    NUMERO          reduce using rule 18 (ex -> ea pb ec .)
+    SIMBOLOS        reduce using rule 18 (ex -> ea pb ec .)
+    COMA            reduce using rule 18 (ex -> ea pb ec .)
+    INTERROGACION_APERTURA reduce using rule 18 (ex -> ea pb ec .)
+    ADMIRACION_APERTURA reduce using rule 18 (ex -> ea pb ec .)
+    PARENTESIS_APERTURA reduce using rule 18 (ex -> ea pb ec .)
+    COMILLA_SIMPLE  reduce using rule 18 (ex -> ea pb ec .)
+    $end            reduce using rule 18 (ex -> ea pb ec .)
+
+
+state 57
+
+    (24) ec -> ADMIRACION_CIERRE .
+
+    PALABRA         reduce using rule 24 (ec -> ADMIRACION_CIERRE .)
+    NUMERO          reduce using rule 24 (ec -> ADMIRACION_CIERRE .)
+    SIMBOLOS        reduce using rule 24 (ec -> ADMIRACION_CIERRE .)
+    COMA            reduce using rule 24 (ec -> ADMIRACION_CIERRE .)
+    INTERROGACION_APERTURA reduce using rule 24 (ec -> ADMIRACION_CIERRE .)
+    ADMIRACION_APERTURA reduce using rule 24 (ec -> ADMIRACION_CIERRE .)
+    PARENTESIS_APERTURA reduce using rule 24 (ec -> ADMIRACION_CIERRE .)
+    COMILLA_SIMPLE  reduce using rule 24 (ec -> ADMIRACION_CIERRE .)
+    $end            reduce using rule 24 (ec -> ADMIRACION_CIERRE .)
+
+
+state 58
+
+    (19) ps -> pa pb pc .
+
+    PALABRA         reduce using rule 19 (ps -> pa pb pc .)
+    NUMERO          reduce using rule 19 (ps -> pa pb pc .)
+    SIMBOLOS        reduce using rule 19 (ps -> pa pb pc .)
+    COMA            reduce using rule 19 (ps -> pa pb pc .)
+    INTERROGACION_APERTURA reduce using rule 19 (ps -> pa pb pc .)
+    ADMIRACION_APERTURA reduce using rule 19 (ps -> pa pb pc .)
+    PARENTESIS_APERTURA reduce using rule 19 (ps -> pa pb pc .)
+    COMILLA_SIMPLE  reduce using rule 19 (ps -> pa pb pc .)
+    $end            reduce using rule 19 (ps -> pa pb pc .)
+
+
+state 59
+
+    (26) pc -> PARENTESIS_CIERRE .
+
+    PALABRA         reduce using rule 26 (pc -> PARENTESIS_CIERRE .)
+    NUMERO          reduce using rule 26 (pc -> PARENTESIS_CIERRE .)
+    SIMBOLOS        reduce using rule 26 (pc -> PARENTESIS_CIERRE .)
+    COMA            reduce using rule 26 (pc -> PARENTESIS_CIERRE .)
+    INTERROGACION_APERTURA reduce using rule 26 (pc -> PARENTESIS_CIERRE .)
+    ADMIRACION_APERTURA reduce using rule 26 (pc -> PARENTESIS_CIERRE .)
+    PARENTESIS_APERTURA reduce using rule 26 (pc -> PARENTESIS_CIERRE .)
+    COMILLA_SIMPLE  reduce using rule 26 (pc -> PARENTESIS_CIERRE .)
+    $end            reduce using rule 26 (pc -> PARENTESIS_CIERRE .)
+
+
+state 60
+
+    (20) c -> cs pb cs .
+
+    PALABRA         reduce using rule 20 (c -> cs pb cs .)
+    NUMERO          reduce using rule 20 (c -> cs pb cs .)
+    SIMBOLOS        reduce using rule 20 (c -> cs pb cs .)
+    COMA            reduce using rule 20 (c -> cs pb cs .)
+    INTERROGACION_APERTURA reduce using rule 20 (c -> cs pb cs .)
+    ADMIRACION_APERTURA reduce using rule 20 (c -> cs pb cs .)
+    PARENTESIS_APERTURA reduce using rule 20 (c -> cs pb cs .)
+    COMILLA_SIMPLE  reduce using rule 20 (c -> cs pb cs .)
+    $end            reduce using rule 20 (c -> cs pb cs .)
+
+
+state 61
+
+    (30) comp -> letra comp .
+
+    INTERROGACION_CIERRE reduce using rule 30 (comp -> letra comp .)
+    ADMIRACION_CIERRE reduce using rule 30 (comp -> letra comp .)
+    PARENTESIS_CIERRE reduce using rule 30 (comp -> letra comp .)
+    COMILLA_SIMPLE  reduce using rule 30 (comp -> letra comp .)
+
+
+state 62
+
+    (31) comp -> digito comp .
+
+    INTERROGACION_CIERRE reduce using rule 31 (comp -> digito comp .)
+    ADMIRACION_CIERRE reduce using rule 31 (comp -> digito comp .)
+    PARENTESIS_CIERRE reduce using rule 31 (comp -> digito comp .)
+    COMILLA_SIMPLE  reduce using rule 31 (comp -> digito comp .)
+
+
+state 63
+
+    (32) comp -> coma comp .
+
+    INTERROGACION_CIERRE reduce using rule 32 (comp -> coma comp .)
+    ADMIRACION_CIERRE reduce using rule 32 (comp -> coma comp .)
+    PARENTESIS_CIERRE reduce using rule 32 (comp -> coma comp .)
+    COMILLA_SIMPLE  reduce using rule 32 (comp -> coma comp .)
+
